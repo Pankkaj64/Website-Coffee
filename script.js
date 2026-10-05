@@ -8,16 +8,17 @@ menuOpenButton.addEventListener("click", () => {
     document.body.classList.toggle("show-mobile-menu")
 })
 
-//Initialize Swiper
-menuCloseButton.addEventListener('click',() => menuOpenButton.click())
-
 // Close menu when the close button is clicked
+menuCloseButton.addEventListener('click', () => document.body.classList.remove("show-mobile-menu"))
+
+// Close menu when a nav link is clicked
 navLinks.forEach(link => {
-    link.addEventListener( "click", () => menuOpenButton.click())
+    link.addEventListener("click", () => document.body.classList.remove("show-mobile-menu"))
    
 })
 
 
+//Initialize Swiper
 const swiper = new Swiper('.slider-wrapper', {
   loop: true,
   grabCursor:true,
